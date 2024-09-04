@@ -367,7 +367,7 @@ class _ListGroupsScreenState extends State<ListGroupsScreen> {
                           _showInviteUserDialog(); // Abre o pop-up para convidar usuário
                         },
                       ),
-                      Icon(Icons.arrow_forward_ios, color: Colors.teal),
+                      Icon(Icons.delete, color: Colors.red),
                     ],
                   ),
                   onTap: () {

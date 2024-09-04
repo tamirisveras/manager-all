@@ -24,7 +24,7 @@ class RecoverPasswordScreen extends StatelessWidget {
           Navigator.pop(context);
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Erro ao enviar o email de recuperação: ${response.body}')),
+            SnackBar(content: Text('Erro ao enviar o email de recuperação: ${response.statusCode} - ${response.body}')),
           );
         }
       } catch (e) {

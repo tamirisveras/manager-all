@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mobile/src/pages/dashboard.dart';
 import 'package:mobile/src/pages/list_espenses_variable.dart';
 import 'package:mobile/src/pages/list_expenses.dart';
-import 'package:mobile/src/pages/register_user.dart';
+import 'package:mobile/src/pages/register_transation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mobile/src/pages/login.dart';
 import 'package:mobile/src/widget/menu.dart';
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DashboardPage(),
     FixedExpensesPage(),
     VariableExpensesPage(),
-    RegisterUserScreen(),
+    RegisterTransactionScreen(),
   ];
 
   void _onItemTapped(int index) {

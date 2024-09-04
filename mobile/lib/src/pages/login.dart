@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile/src/pages/register_user.dart';
+import 'package:mobile/src/pages/create_user.dart';
+import 'package:mobile/src/pages/register_transation.dart';
 import 'package:mobile/src/widget/menu_end.dart';
 import 'package:mobile/src/widget/recover_pasword.dart';
 import 'package:shared_preferences/shared_preferences.dart';

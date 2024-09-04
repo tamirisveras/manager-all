@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile/src/pages/list_expenses.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RegisterUserScreen extends StatefulWidget {
+class RegisterTransactionScreen extends StatefulWidget {
   @override
-  _RegisterUserScreenState createState() => _RegisterUserScreenState();
+  _RegisterTransactionScreenState createState() =>
+      _RegisterTransactionScreenState();
 }
 
-class _RegisterUserScreenState extends State<RegisterUserScreen> {
+class _RegisterTransactionScreenState extends State<RegisterTransactionScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _valueController = TextEditingController();
   String _selectedTransactionType = 'Fixo'; // Valor inicial
@@ -50,11 +50,12 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Transação cadastrada com sucesso!')),
           );
-          // Redireciona para a FixedExpensesPage após o sucesso
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => FixedExpensesPage()),
-          );
+          // Limpa os campos após o sucesso
+          setState(() {
+            _nameController.clear();
+            _valueController.clear();
+            _selectedTransactionType = 'Fixo';
+          });
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Erro ao cadastrar transação: ${response.body}')),

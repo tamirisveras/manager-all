@@ -61,6 +61,42 @@ class _VariableExpensesPageState extends State<VariableExpensesPage> {
     }
   }
 
+  // Função para deletar a transação
+  Future<void> _deleteTransaction(int transactionId) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+
+    if (token != null) {
+      final url = Uri.parse('http://10.0.2.2:8000/groups/delete/$transactionId/');
+      try {
+        final response = await http.delete(
+          url,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token $token',
+          },
+        );
+
+        if (response.statusCode == 204) {
+          setState(() {
+            _transactions.removeWhere((transaction) => transaction['id'] == transactionId);
+          });
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Transação deletada com sucesso!')),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Erro ao deletar transação: ${response.body}')),
+          );
+        }
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Erro de rede: $e')),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +119,26 @@ class _VariableExpensesPageState extends State<VariableExpensesPage> {
                             Text('Data: ${transaction['date']}'),
                           ],
                         ),
-                        trailing: Text(transaction['type_transaction'] ? 'Variável' : 'Fixo'),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.edit, color: Colors.blue),
+                              onPressed: () {
+                                // Ação de edição decorativa
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text('Função de edição ainda não implementada')),
+                                );
+                              },
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                _deleteTransaction(transaction['id']);
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
