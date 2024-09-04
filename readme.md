@@ -15,11 +15,12 @@ Pronto! O Manager - all está instalado e pronto para uso.
 
 ## Funcionalidades
 
-- **Monitoramento de Despesas,
-- **Gestão de Orçamento,
-- **Visualização Gráfica**:
-- Grupos Colaborativos*
-- **Análise de Gastos ao Longo do Tempo
+- Monitoramento de Despesas
+- Gestão de Orçamento
+- Visualização Gráfica
+- Grupos Colaborativos
+- Análise de Gastos ao Longo do Tempo
+  
 ## Tecnologias Utilizadas
 
 O Manager - all foi desenvolvido com as seguintes tecnologias:
