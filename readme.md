@@ -1,5 +1,7 @@
-
 # Manager - all
+
+Acesse o vídeo com a demonstração das funcionalidades do Manager - all
+https://www.youtube.com/watch?feature=shared&v=oNNkHHrFeDY
 
 **Manager - all** é um aplicativo financeiro projetado para oferecer uma visão abrangente e detalhada do seu gerenciamento de finanças pessoais. Com uma interface fácil de usar e recursos avançados, o Manager - all facilita o controle de despesas, o planejamento orçamentário e o alcance de metas financeiras com clareza e eficiência.
 
