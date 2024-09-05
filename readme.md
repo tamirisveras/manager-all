@@ -5,7 +5,17 @@ https://www.youtube.com/watch?feature=shared&v=oNNkHHrFeDY
 
 **Manager - all** é um aplicativo financeiro projetado para oferecer uma visão abrangente e detalhada do seu gerenciamento de finanças pessoais. Com uma interface fácil de usar e recursos avançados, o Manager - all facilita o controle de despesas, o planejamento orçamentário e o alcance de metas financeiras com clareza e eficiência.
 
-## Instalação
+## Instalação: 
+
+No settings.py adicione as configurações de email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = TRUE
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "seu_mail"
+EMAIL_HOST_PASSWORD = "sua_senha"
+DEFAULT_FROM_EMAIL = 'default from email'
 
 Para instalar o Manager - all, siga os passos abaixo:
 
@@ -29,3 +39,4 @@ O Manager - all foi desenvolvido com as seguintes tecnologias:
 
 - **Flutter**: Framework para desenvolvimento de aplicativos multiplataforma.
 - **Django**: Backend via API para gerenciar os dados e a lógica do aplicativo.
+
